@@ -1,0 +1,58 @@
+#block-locale-language{
+  .language-switcher-locale-url{
+    text-align: right;
+    margin-bottom: 10px;
+    padding-top: 7px;
+    li{
+      display: inline-block;
+      a{
+        color: $bg_1;
+        padding-left: 5px;
+        &.active{
+          color: $text_white;
+        }
+      }
+      &.en{
+
+      }
+      &.vi{
+        a{
+          position: relative;
+          padding-right: 10px;
+          &:after{
+            content: "";
+            position: absolute;
+            width: 1px;
+            background: $text-white;
+            height: 13px;
+            right: 0px;
+            top: 50%;
+            transform: translate( 0,-50%);
+          }
+        }
+      }
+    }
+  }
+}
+
+@include bp(max-width,$bp-tablet){
+  #block-locale-language{
+    z-index: 9999;
+    .language-switcher-locale-url{
+      li{
+        a{
+          padding-left: 5px;
+
+        }
+        &.vi{
+          a{
+
+            &:after{
+              background: $bg_4;
+            }
+          }
+        }
+      }
+    }
+  }
+}

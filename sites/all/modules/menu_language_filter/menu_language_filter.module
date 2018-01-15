@@ -1,0 +1,182 @@
+<?php
+/**
+ * @file
+ * Hook implementations for the Menu Language Filter module.
+ */
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function menu_language_filter_preprocess_table(&$vars) {
+  if (isset($vars['attributes']['id']) && $vars['attributes']['id'] == 'menu-overview') {
+
+    // Add JS to move filter form.
+    drupal_add_js(drupal_get_path('module', 'menu_language_filter') . '/menu_language_filter.js');
+
+    // Load all languages so the full language can show rather than the
+    // language prefix.
+    $languages = language_list();
+
+    // Add language header in before enabled and operations.
+    $operations = array_pop($vars['header']);
+    $enabled    = array_pop($vars['header']);
+    array_push($vars['header'], t('Language'));
+    array_push($vars['header'], $enabled);
+    array_push($vars['header'], $operations);
+
+    // Control variables for the loop.
+    $level           = 0;
+    $previous_level  = 0;
+    $previous_hidden = FALSE;
+
+    // Loop rows and add language column.
+    foreach ($vars['rows'] as $index => &$row) {
+      if (isset($row['data'])) {
+
+        // Determine the level of the menu.
+        $level = substr_count($row['data'][0], '<div class="indentation">&nbsp;</div>');
+
+        // Determine where the operations start, so we can splice in the
+        // language column properly.
+        $start_index = 0;
+        foreach ($row['data'] as $column_index => $column) {
+          if (isset($column['class']) && in_array('menu-operations', $column['class'])) {
+            $start_index = $column_index;
+            break;
+          }
+        }
+
+        // Add the language column.
+        $menu_lang = $_SESSION['menu_language_filter']['link_languages'][$index];
+        $lang_name = array(($menu_lang == LANGUAGE_NONE) ? t('Language Neutral') : $languages[$menu_lang]->name);
+        array_splice($row['data'], $start_index - 1, 0, $lang_name);
+
+        // Add the class to hide the row if the parent row was hidden.
+        if ($previous_hidden) {
+
+          // Child row, hide it.
+          if ($previous_level < $level) {
+            $row['class'][]  = 'menu_filter_hidden';
+          }
+
+          // Sibling of parent, done hiding.
+          else {
+            $previous_hidden = FALSE;
+          }
+        }
+
+        // Add the class to hide the row if applicable.
+        if (isset($_SESSION['menu_language_filter']['filtered_language'])) {
+          if ($menu_lang != LANGUAGE_NONE && $menu_lang != $_SESSION['menu_language_filter']['filtered_language']) {
+            $row['class'][]  = 'menu_filter_hidden';
+            $previous_level  = $level;
+            $previous_hidden = TRUE;
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_module_implements_alter().
+ */
+function menu_language_filter_module_implements_alter(&$implementations, $hook) {
+
+  // Move menu_language_filter to the end of the execution order for
+  // the form alter hook.
+  if ($hook == 'form_alter') {
+    unset($implementations['menu_language_filter']);
+    $implementations['menu_language_filter'] = '';
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function menu_language_filter_form_alter(&$form, &$form_state, $form_id) {
+
+  // This only applies to these two forms.
+  if ($form_id == 'menu_overview_form' || $form_id == 'og_menu_overview_form') {
+
+    // Clear out any previous form data.
+    $_SESSION['menu_language_filter']['link_languages'] = array();
+
+    // Keep track of languages for each menu link.
+    foreach ($form as $key => $value) {
+      if (stripos($key, 'mlid:') === 0) {
+        $_SESSION['menu_language_filter']['link_languages'][] = $value['#item']['language'];
+      }
+    }
+
+    // Add the filter form to the bottom, will re-position with javascript
+    // after the page is rendered.
+    $form = menu_language_filter_filter_form($form, $form_state);
+  }
+}
+
+/**
+ * Declaration of filter form.
+ */
+function menu_language_filter_filter_form($form, &$form_state) {
+  $languages = array('0' => 'All Languages');
+  foreach (language_list() as $code => $language) {
+    $languages[$code] = $language->name;
+  }
+
+  $filter_language = 0;
+  if (isset($_SESSION['menu_language_filter']['filtered_language'])) {
+    $filter_language = $_SESSION['menu_language_filter']['filtered_language'];
+  }
+
+  $form['filter'] = array(
+    '#type'          => 'fieldset',
+    '#title'         => t('Filter by Language'),
+    '#collapsible'   => TRUE,
+    '#collapsed'     => ($filter_language) ? FALSE : TRUE,
+    '#weight'        => -100,
+  );
+
+  $form['filter']['language'] = array(
+    '#type'          => 'select',
+    '#title'         => t('Language'),
+    '#options'       => $languages,
+    '#default_value' => $filter_language,
+    '#description'   => t('Language Neutral always shows, regardless of selected language.'),
+  );
+
+  $form['filter']['submit'] = array(
+    '#type'          => 'submit',
+    '#value'         => t('Apply Filter'),
+  );
+
+  if ($filter_language) {
+    $form['filter']['reset'] = array(
+      '#type'        => 'submit',
+      '#value'       => t('Reset Filter'),
+    );
+  }
+
+  array_unshift($form['#submit'], 'menu_language_filter_filter_form_submit');
+
+  return $form;
+}
+
+/**
+ * Submit function for filter form.
+ */
+function menu_language_filter_filter_form_submit($form, &$form_state) {
+  if ($form_state['values']['op'] == t('Apply Filter')) {
+
+    // Issue #2610018 - if filtering on all languages, reset session.
+    if (empty($form_state['values']['filter']['language'])) {
+      unset($_SESSION['menu_language_filter']['filtered_language']);
+    }
+    else {
+      $_SESSION['menu_language_filter']['filtered_language'] = $form_state['values']['filter']['language'];
+    }
+  }
+  if ($form_state['values']['op'] == t('Reset Filter')) {
+    unset($_SESSION['menu_language_filter']['filtered_language']);
+  }
+}
