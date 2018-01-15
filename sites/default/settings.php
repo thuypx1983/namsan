@@ -249,7 +249,7 @@ $databases = array (
   array (
     'default' => 
     array (
-      'database' => 'bcc',
+      'database' => 'namsan',
       'username' => 'root',
       'password' => 'root',
       'host' => 'localhost',
