@@ -26,21 +26,13 @@ img {
 
 .block .title {
   font-size: 25px;
-  font-weight: bold;
   text-transform: uppercase;
   display: block;
   position: relative;
-  color: #124B87;
+  color: #000;
   margin-bottom: 25px;
-  padding-bottom: 10px; }
-  .block .title:after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 1px;
-    background-color: #797979;
-    bottom: 0px;
-    left: 0px; }
+  padding-bottom: 10px;
+  text-align: center; }
 
 .sidebar .block {
   margin-bottom: 30px; }
@@ -94,8 +86,11 @@ body.not-front {
 
   #sidebar {
     margin-top: 50px; } }
+.home-highlights {
+  margin-top: 35px; }
+
 #header-top {
-  background-color: #164D81;
+  background-color: #000;
   padding-top: 20px;
   padding-bottom: 20px; }
 
@@ -131,7 +126,7 @@ body.not-front {
     padding-bottom: 5px; }
 
   #header {
-    background-color: #124B87;
+    background-color: #000;
     position: relative;
     z-index: 1; }
     #header > .container {
@@ -143,7 +138,7 @@ body.not-front {
       bottom: 0px;
       height: 4px;
       content: "";
-      background-color: #3DAFD0; }
+      background-color: #E0B95C; }
     #header .row {
       display: table;
       width: 100%; }
@@ -178,9 +173,9 @@ body.not-front {
     display: none; }
 
   #block-locale-language .language-switcher-locale-url li a.active {
-    color: #124B87 !important; } }
+    color: #000 !important; } }
 .footer-bottom {
-  background-color: #124B87;
+  background-color: #000;
   padding: 15px 0px; }
   .footer-bottom p {
     color: #fff;
@@ -257,29 +252,29 @@ body.not-front {
       padding: 25px 0px;
       display: block;
       position: relative;
-      color: #3DAFD0; }
+      color: #E0B95C; }
       #navigation #main-menu > ul.menu > li a.active {
         background: transparent;
-        color: #ED443D; }
+        color: #fff; }
         #navigation #main-menu > ul.menu > li a.active:after {
           position: absolute;
           content: "";
           bottom: 0px;
           width: 100%;
-          background-color: #ED443D;
+          background-color: #fff;
           height: 4px;
           left: 0px;
           z-index: 10; }
       #navigation #main-menu > ul.menu > li a:hover {
         background: transparent;
-        color: #ED443D;
+        color: #fff;
         text-decoration: none; }
         #navigation #main-menu > ul.menu > li a:hover:after {
           position: absolute;
           content: "";
           bottom: 0px;
           width: 100%;
-          background-color: #ED443D;
+          background-color: #fff;
           height: 4px;
           left: 0px; }
     #navigation #main-menu > ul.menu > li > a {
@@ -290,13 +285,13 @@ body.not-front {
     display: block; }
   #navigation #main-menu > ul.menu > li > ul {
     display: none;
-    border-top: 4px solid #ED443D;
+    border-top: 4px solid #fff;
     position: absolute;
     width: 250px;
     top: calc(100% - 4px);
     left: 0px;
     z-index: 9999;
-    background-color: #fff;
+    background-color: #000;
     padding-left: 0px;
     padding-bottom: 10px; }
     #navigation #main-menu > ul.menu > li > ul > li {
@@ -333,7 +328,7 @@ body.not-front {
     height: 0;
     border-style: solid;
     border-width: 5px 5px 0 5px;
-    border-color: #3DAFD0 transparent transparent transparent;
+    border-color: #E0B95C transparent transparent transparent;
     right: 18px;
     top: 50%;
     transform: translate(0, -50%); }
@@ -350,7 +345,7 @@ body.not-front {
       border-bottom: 1px solid #9a9a9a; }
   .not-front #navigation #main-menu > ul.menu > li a.active-trail {
     background-color: transparent;
-    color: #ED443D; } }
+    color: #fff; } }
 @media only screen and (max-width: 991px) {
   .hotline-mobile {
     text-align: center;
@@ -367,7 +362,7 @@ body.not-front {
     .menu-btn span.icon-bar {
       display: block;
       height: 4px;
-      background-color: #124B87;
+      background-color: #000;
       width: 30px;
       margin-bottom: 8px;
       border-radius: 2px; }
@@ -378,7 +373,7 @@ body.not-front {
     font-size: 28px;
     line-height: 28px;
     margin-right: 15px;
-    color: #124B87; }
+    color: #000; }
 
   .mobile-header {
     display: table;
@@ -528,7 +523,7 @@ body.not-front {
       bottom: 0px;
       padding: 20px;
       background-color: rgba(255, 255, 255, 0.6);
-      color: #124B87;
+      color: #000;
       text-transform: uppercase;
       font-size: 30px;
       font-weight: bold;
@@ -538,6 +533,17 @@ body.not-front {
       margin-right: auto;
       text-align: center;
       font-style: italic; }
+  .banner-home .slick-next {
+    right: 60px; }
+  .banner-home .slick-prev {
+    left: 60px; }
+  .banner-home .slick-next, .banner-home .slick-prev {
+    z-index: 1;
+    width: 27px;
+    height: 80px; }
+    .banner-home .slick-next:hover, .banner-home .slick-prev:hover {
+      filter: brightness(0.5);
+      -webkit-filter: brightness(0.5); }
 
 .banner-second {
   margin-bottom: 30px; }
@@ -675,7 +681,7 @@ body.not-front {
   margin-bottom: 30px; }
   .technical div.title span {
     font-size: 25px;
-    color: #124B87;
+    color: #000;
     font-weight: bold;
     text-transform: uppercase; }
   .technical div.title:after {
@@ -788,7 +794,7 @@ body.not-front {
       position: relative;
       padding-left: 13px; }
       #block-menu-menu-he-gia-tri-code-loi ul.menu li a.active {
-        color: #124B87;
+        color: #000;
         font-weight: bold; }
       #block-menu-menu-he-gia-tri-code-loi ul.menu li a:before {
         position: absolute;
@@ -820,9 +826,9 @@ body.not-front {
       left: 50%;
       transform: translate(-50%, 0);
       bottom: 0px;
-      background-color: #ffbc00; }
+      background-color: #E0B95C; }
   .related-products .slick-next::before, .related-products .slick-prev::before {
-    color: #124B87; }
+    color: #000; }
 
 .menu-product-category .title {
   font-size: 16px;
@@ -848,7 +854,7 @@ body.not-front {
       .menu-product-category ul.menu li a:hover {
         color: #ED443D; }
       .menu-product-category ul.menu li a.active {
-        color: #124B87; }
+        color: #000; }
     .menu-product-category ul.menu li .glyphicon {
       float: right;
       margin-right: 15px;
@@ -894,7 +900,7 @@ body.not-front {
   text-transform: none;
   font-weight: bold; }
   .news-left-sidebar.block .title:after {
-    background-color: #ffbc00;
+    background-color: #E0B95C;
     width: 50px;
     bottom: -8px; }
 .news-left-sidebar.block .views-field-title {
@@ -919,7 +925,7 @@ body.not-front {
       font-size: 15px;
       color: #797979; }
       .menu-news ul li a.active {
-        color: #124B87; }
+        color: #000; }
       .menu-news ul li a:before {
         content: "\2022\2002"; }
 
@@ -1046,8 +1052,28 @@ body.not-front {
     #block-locale-language .language-switcher-locale-url li a {
       padding-left: 5px; }
     #block-locale-language .language-switcher-locale-url li.vi a:after {
-      background: #124B87; } }
+      background: #000; } }
 /*page*/
+#block-views-projects-block, #block-views-feature-block {
+  padding-top: 50px;
+  padding-bottom: 35px; }
+  #block-views-projects-block .views-field-title, #block-views-feature-block .views-field-title {
+    font-size: 18px;
+    display: block;
+    text-align: center;
+    padding-top: 25px;
+    max-width: 250px;
+    margin: auto; }
+  #block-views-projects-block .view-header, #block-views-feature-block .view-header {
+    padding-bottom: 20px; }
+    #block-views-projects-block .view-header p, #block-views-feature-block .view-header p {
+      text-align: center;
+      font-size: 18px;
+      color: #797979; }
+
+#block-views-feature-block .title {
+  margin-bottom: 0px; }
+
 .banner-category {
   margin-bottom: 20px;
   padding-left: 15px;
@@ -1137,7 +1163,7 @@ body.not-front {
 h1.news-title {
   font-size: 18px;
   font-weight: bold;
-  color: #124B87;
+  color: #000;
   margin-top: 0px; }
 
 #block-system-main .node-full .form-item {
@@ -1147,7 +1173,7 @@ h1.news-title {
   text-align: justify; }
 
 .node-type-product h1.product-title {
-  color: #124B87;
+  color: #000;
   font-size: 18px;
   font-weight: bold;
   padding-top: 0px;

@@ -31,6 +31,21 @@
     }
   }
   border-bottom: 4px solid $bg_2;
+  .slick-next{
+    right: 60px;
+  }
+ .slick-prev{
+    left: 60px;
+  }
+  .slick-next, .slick-prev{
+    z-index: 1;
+    width: 27px;
+    height: 80px;
+    &:hover{
+      filter: brightness(.5);
+      -webkit-filter: brightness(.5);
+    }
+  }
 }
 
 .banner-second{
