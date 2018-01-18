@@ -1,4 +1,4 @@
-#block-views-projects-block,#block-views-projects-category-block,#block-views-feature-block{
+#block-views-feature-block{
   padding-top: 50px;
   padding-bottom: 35px;
   .views-field-title{
@@ -17,6 +17,19 @@
       color: $text_black_light;
     }
     padding-bottom: 20px;
+  }
+}
+#block-views-projects-category-block{
+  padding-top: 50px;
+  padding-bottom: 35px;
+  .views-field-name{
+    font-size: 18px;
+    display: block;
+    text-align: center;
+    padding-top: 25px;
+    max-width: 250px;
+    margin: auto;
+
   }
 }
 #block-views-feature-block{
