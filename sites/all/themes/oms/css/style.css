@@ -1054,19 +1054,19 @@ body.not-front {
     #block-locale-language .language-switcher-locale-url li.vi a:after {
       background: #000; } }
 /*page*/
-#block-views-projects-block, #block-views-feature-block {
+#block-views-projects-block, #block-views-projects-category-block, #block-views-feature-block {
   padding-top: 50px;
   padding-bottom: 35px; }
-  #block-views-projects-block .views-field-title, #block-views-feature-block .views-field-title {
+  #block-views-projects-block .views-field-title, #block-views-projects-category-block .views-field-title, #block-views-feature-block .views-field-title {
     font-size: 18px;
     display: block;
     text-align: center;
     padding-top: 25px;
     max-width: 250px;
     margin: auto; }
-  #block-views-projects-block .view-header, #block-views-feature-block .view-header {
+  #block-views-projects-block .view-header, #block-views-projects-category-block .view-header, #block-views-feature-block .view-header {
     padding-bottom: 20px; }
-    #block-views-projects-block .view-header p, #block-views-feature-block .view-header p {
+    #block-views-projects-block .view-header p, #block-views-projects-category-block .view-header p, #block-views-feature-block .view-header p {
       text-align: center;
       font-size: 18px;
       color: #797979; }
