@@ -1,21 +1,1 @@
-<footer>
-  <div id="footer" class="footer">
-    <div class="container">
-      <div class="row">
-        <?php print render($page['footer']) ?>
-      </div>
-    </div>
-  </div>
-
-  <div id="footer-bottom" class="footer-bottom">
-    <div class="container">
-      <?php print render($page['footer_bottom']) ?>
-    </div>
-  </div>
-</footer>
-
-<!--pushy menu-->
-<div class="mobile-menu-container pushy pushy-right">
-</div>
-<div class="site-overlay"></div>
-<!--!pushy menu-->
+<footer>  <div id="footer" class="footer">    <div class="container">      <div class="row ">        <?php print render($page['footer_top']) ?>      </div>      <div class="row line">        <div class="col-md-12"><hr></div>      </div>      <div class="row">        <div class="col-md-4 footer-left">          <span class="footer-title"><?php echo t('Đăng ký liên hệ')?></span>          <?php print render($page['footer_left']) ?>        </div>        <div class="col-md-8 footer-right">          <span class="footer-title"><?php echo t('NAMSAN Stone')?></span>          <div class="row">            <?php print render($page['footer_right']) ?>          </div>        </div>      </div>    </div>  </div>  <div id="footer-bottom" class="footer-bottom">    <div class="container">      <?php print render($page['footer_bottom']) ?>    </div>  </div></footer><!--pushy menu--><div class="mobile-menu-container pushy pushy-right"></div><div class="site-overlay"></div><!--!pushy menu-->

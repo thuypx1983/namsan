@@ -10,6 +10,7 @@
   .row-content{
     position: relative;
     .views-field-title{
+      display: none;
       position: absolute;
       bottom: 0px;
       width: 100%;
@@ -30,7 +31,6 @@
       font-style: italic;
     }
   }
-  border-bottom: 4px solid $bg_2;
   .slick-next{
     right: 60px;
   }

@@ -44,10 +44,13 @@
     }
   }
 }
+.home-highlight-box2 .block .title{
+  border-bottom: 1px solid $text_gray_light;
+}
 .home-highlight-box2{
-  margin-top:40px;
+  margin-top:30px;
   padding-top: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 70px;
 }
 
 @include bp(max-width,$bp-tablet){
