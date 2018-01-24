@@ -1,7 +1,14 @@
 
 .block-system{
   .view-technical-list{
-
+    .views-field-title{
+      padding-bottom: 5px;
+      padding-top: 20px;
+      a{
+        font-size: 18px;
+        color: $text_black;
+      }
+    }
   }
 
 

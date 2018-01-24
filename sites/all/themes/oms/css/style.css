@@ -1277,6 +1277,13 @@ h1.news-title {
 .node-type-product .form-type-item {
   margin: 0px; }
 
+.block-system .view-technical-list .views-field-title {
+  padding-bottom: 5px;
+  padding-top: 20px; }
+  .block-system .view-technical-list .views-field-title a {
+    font-size: 18px;
+    color: #000; }
+
 .view-jobs .views-row {
   margin-bottom: 10px;
   padding-bottom: 15px;
