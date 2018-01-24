@@ -152,13 +152,11 @@ body.not-front {
         width: 150px; } }
 @media only screen and (max-width: 991px) {
   #header {
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: #000;
     position: relative;
     z-index: 9; }
     #header .row {
       position: relative; }
-      #header .row .column-logo {
-        margin-top: 20px; }
       #header .row .column-header-top {
         position: absolute;
         top: 0px;
@@ -173,7 +171,7 @@ body.not-front {
     display: none; }
 
   #block-locale-language .language-switcher-locale-url li a.active {
-    color: #000 !important; } }
+    color: #fff !important; } }
 .footer-bottom {
   background-color: #000;
   padding: 15px 0px; }
@@ -401,7 +399,7 @@ body.not-front {
     .menu-btn span.icon-bar {
       display: block;
       height: 4px;
-      background-color: #000;
+      background-color: #fff;
       width: 30px;
       margin-bottom: 8px;
       border-radius: 2px; }
@@ -412,7 +410,7 @@ body.not-front {
     font-size: 28px;
     line-height: 28px;
     margin-right: 15px;
-    color: #000; }
+    color: #fff; }
 
   .mobile-header {
     display: table;
@@ -422,11 +420,14 @@ body.not-front {
     .mobile-header #logo {
       display: table-cell !important;
       float: none; }
+      .mobile-header #logo img {
+        max-width: 125px; }
     .mobile-header .mobile-menu {
       display: table-cell;
       vertical-align: middle;
       float: none;
-      width: 100px; }
+      width: 100px;
+      padding-top: 25px; }
 
   #header .pull-left #logo a {
     justify-content: left;
@@ -434,22 +435,54 @@ body.not-front {
     #header .pull-left #logo a img {
       max-height: 68px; }
 
-  #main-menu > ul.menu > li ul {
-    padding-left: 10px; }
-    #main-menu > ul.menu > li ul li a {
-      font-size: 20px; }
+  #main-menu {
+    background-color: #f2f4f4; }
+    #main-menu > ul.menu > li {
+      position: relative; }
+      #main-menu > ul.menu > li ul {
+        padding-left: 0px;
+        width: 100%; }
+        #main-menu > ul.menu > li ul li a {
+          font-size: 20px; }
 
   .pushy {
     width: 25px; }
     .pushy #navigation #main-menu > ul.menu {
-      padding-left: 15px; }
-      .pushy #navigation #main-menu > ul.menu > li a {
-        color: #fff;
-        font-size: 16px;
-        padding-top: 5px;
-        padding-bottom: 5px; }
-        .pushy #navigation #main-menu > ul.menu > li a:after {
-          display: none; } }
+      padding-left: 0px;
+      width: 100%; }
+      .pushy #navigation #main-menu > ul.menu > li {
+        border-bottom: 1px solid #9a9a9a;
+        padding: 0px;
+        float: none; }
+        .pushy #navigation #main-menu > ul.menu > li a {
+          color: #000;
+          padding: 10px;
+          display: block;
+          font-size: 16px; }
+          .pushy #navigation #main-menu > ul.menu > li a:after {
+            display: none; }
+        .pushy #navigation #main-menu > ul.menu > li.expanded ul.menu {
+          display: block; }
+        .pushy #navigation #main-menu > ul.menu > li.expanded a {
+          border-bottom: 1px solid #fff; }
+        .pushy #navigation #main-menu > ul.menu > li ul.menu {
+          background-color: #9a9a9a;
+          display: none; }
+          .pushy #navigation #main-menu > ul.menu > li ul.menu li {
+            list-style: none;
+            margin: 0px; }
+            .pushy #navigation #main-menu > ul.menu > li ul.menu li a {
+              color: #fff; }
+
+  .pushy #navigation #main-menu > ul.menu > li > .fa {
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    font-size: 25px;
+    line-height: 40px;
+    padding-left: 5px;
+    padding-right: 5px;
+    z-index: 1; } }
 .menu-top {
   display: none; }
   .menu-top ul {
@@ -1094,7 +1127,7 @@ body.not-front {
     #block-locale-language .language-switcher-locale-url li a {
       padding-left: 5px; }
     #block-locale-language .language-switcher-locale-url li.vi a:after {
-      background: #000; } }
+      background: #fff; } }
 /*page*/
 #block-views-feature-block {
   padding-top: 50px;

@@ -79,7 +79,7 @@
 }
 @include bp(max-width,$bp-tablet){
   #header{
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: $bg_4;
     position: relative;
     z-index: 9;
     #logo{
@@ -89,9 +89,6 @@
     }
     .row{
       position: relative;
-      .column-logo{
-        margin-top: 20px;
-      }
       .column-header-top{
         position: absolute;
         top: 0px;
@@ -108,7 +105,7 @@
     display: none;
   }
   #block-locale-language .language-switcher-locale-url li a.active{
-    color: $bg_4 !important;
+    color: $text-white !important;
   }
 
 }
