@@ -75,7 +75,7 @@ body.not-front {
 @media only screen and (max-width: 991px) {
   .block .title {
     text-align: center;
-    font-size: 15px;
+    font-size: 22px;
     display: block;
     text-align: center; }
     .block .title:after {
@@ -626,7 +626,11 @@ body.not-front {
     margin-top: 0px; }
     .front #home-banner .views-field-title {
       padding: 5px;
-      font-size: 13px; } }
+      font-size: 13px; }
+
+  .banner-home .slick-next, .banner-home .slick-prev {
+    width: 16px;
+    height: 40px; } }
 #block-views-project-category-block .views-field-name .field-content:after {
   position: absolute;
   content: "";
@@ -1160,6 +1164,9 @@ body.not-front {
 #block-views-feature-block .title {
   margin-bottom: 0px; }
 
+@media only screen and (max-width: 991px) {
+  #block-views-feature-block .views-field-title {
+    margin-bottom: 25px; } }
 .banner-category {
   margin-bottom: 20px;
   padding-left: 15px;

@@ -37,3 +37,8 @@
     margin-bottom: 0px;
   }
 }
+@include bp(max-width,$bp-tablet){
+  #block-views-feature-block .views-field-title{
+    margin-bottom: 25px;
+  }
+}
