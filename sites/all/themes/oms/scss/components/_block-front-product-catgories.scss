@@ -1,3 +1,19 @@
+#block-views-project-category-block{
+  .views-field-name{
+    .field-content{
+      &:after{
+        position: absolute;
+        content:"";
+        bottom: -20px;
+        width: 30px;
+        height: 2px;
+        background-color: $text_yellow;
+        left: 50%;
+        transform: translate(-50%, 0);
+      }
+    }
+  }
+}
 .category-list{
   padding-top: 35px;
   .views-row{
@@ -10,20 +26,7 @@
         filter: brightness(.8);
       }
     }
-    .views-field-title{
-      .field-content{
-        &:after{
-          position: absolute;
-          content:"";
-          bottom: -20px;
-          width: 30px;
-          height: 2px;
-          background-color: $text_yellow;
-          left: 50%;
-          transform: translate(-50%, 0);
-        }
-      }
-    }
+
     .views-field-title,.views-field-name{
       font-size: 19px;
       text-align: center;
@@ -34,6 +37,24 @@
         display: inline-block;
         position: relative;
       }
+    }
+  }
+}
+.view-projects{
+  .views-field-title{
+    a{
+      font-size: 18px;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 20px 0px 10px 0px;
+      display: block;
+      color: $text_black;
+    }
+  }
+  .views-field-field-investor,.views-field-field-component,.views-field-field-execution-time{
+    span,.field-content{
+      display: inline-block;
+      color: $text_black_light;
     }
   }
 }

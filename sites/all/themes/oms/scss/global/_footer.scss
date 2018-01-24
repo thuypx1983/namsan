@@ -11,18 +11,18 @@
 .footer{
 
   background-color: $bg_7;
-  padding-top: 30px;
   padding-bottom: 15px;
   margin-top: 40px;
   .line .col-md-12 hr{
-    border-bottom: 2px solid $text_black1;
+    border-bottom: 1pt solid $text_black_light;
   }
   .footer-title{
     display: block;
-    border-bottom: 2px solid $text_black1;
+    border-bottom: 1pt solid $text_black_light;
     padding-bottom: 10px;
     font-size: 18px;
     font-weight: bold;
+    color: $text_black_light;
   }
   .block-footer{
     .title{
@@ -95,6 +95,31 @@
     bottom: 6px;
     &:hover{
       background: transparent  url('/sites/all/themes/oms/images/arrow-l.svg') no-repeat;
+    }
+  }
+  .webform-component--markup p{
+    color: $text_gray;
+    margin: 15px 0px;
+  }
+}
+.footer-logo{
+  img{
+    max-height: 100px;
+    margin: auto;
+    display: block;
+  }
+}
+@include bp(min-width,$bp-tablet+1){
+  .block.follow-me{
+    .content{
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      p{
+        position: absolute;
+        bottom: 0px;
+      }
     }
   }
 }
