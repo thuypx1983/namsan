@@ -1277,12 +1277,24 @@ h1.news-title {
 .node-type-product .form-type-item {
   margin: 0px; }
 
-.block-system .view-technical-list .views-field-title {
+.block-system .view-technical-list .views-field-title, .block-system .view-library .views-field-title {
   padding-bottom: 5px;
-  padding-top: 20px; }
-  .block-system .view-technical-list .views-field-title a {
-    font-size: 18px;
-    color: #000; }
+  padding-top: 20px;
+  font-size: 18px;
+  color: #000;
+  text-align: center; }
+.block-system .view-technical-list .views-field-field-sumarry .field-content, .block-system .view-library .views-field-field-sumarry .field-content {
+  color: #797979;
+  max-width: 200px;
+  margin: auto; }
+.block-system .view-technical-list .views-field-field-file, .block-system .view-library .views-field-field-file {
+  text-align: center;
+  padding-top: 15px; }
+  .block-system .view-technical-list .views-field-field-file a.btn.btn-download, .block-system .view-library .views-field-field-file a.btn.btn-download {
+    border: 1px solid #7a7a7a;
+    color: #7a7a7a;
+    padding: 8px 15px;
+    display: inline-block; }
 
 .view-jobs .views-row {
   margin-bottom: 10px;

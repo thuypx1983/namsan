@@ -1,14 +1,32 @@
 
 .block-system{
-  .view-technical-list{
+  .view-technical-list,.view-library{
     .views-field-title{
       padding-bottom: 5px;
       padding-top: 20px;
-      a{
-        font-size: 18px;
-        color: $text_black;
+      font-size: 18px;
+      color: $text_black;
+      text-align: center;
+    }
+    .views-field-field-sumarry{
+
+      .field-content{
+        color: $text_black_light;
+        max-width: 200px;
+        margin: auto;
       }
     }
+    .views-field-field-file{
+      text-align: center;
+      padding-top: 15px;
+      a.btn.btn-download{
+        border: 1px solid $text_gray;
+        color: $text_gray;
+        padding: 8px 15px;
+        display: inline-block;
+      }
+    }
+
   }
 
 
