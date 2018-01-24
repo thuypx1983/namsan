@@ -42,16 +42,24 @@ img {
 
 body.not-front {
   background-color: #fff; }
-  body.not-front a {
-    color: #3DAFD0; }
-  body.not-front #main {
-    margin-top: 50px; }
 
 .page-title {
-  margin-bottom: 10px; }
+  background-color: #f2f4f4;
+  margin-bottom: 30px; }
   .page-title h1.title, .page-title h2.title {
-    font-size: 20px;
-    margin-bottom: 10px; }
+    font-size: 30px;
+    margin-bottom: 25px;
+    padding-bottom: 10pt;
+    margin-top: 25px;
+    position: relative; }
+    .page-title h1.title:after, .page-title h2.title:after {
+      content: "";
+      position: absolute;
+      width: 30px;
+      height: 2px;
+      background-color: #000;
+      bottom: 0px;
+      left: 0px; }
 
 .form-submit {
   border: none;
@@ -149,7 +157,8 @@ body.not-front {
       #header .row .column-logo {
         width: 250px; }
       #header .row .column-header-top {
-        width: 150px; } }
+        width: 200px;
+        vertical-align: top; } }
 @media only screen and (max-width: 991px) {
   #header {
     background-color: #000;
@@ -181,6 +190,7 @@ body.not-front {
     font-size: 16px; }
 
 .footer {
+  margin-top: 40px;
   background-color: #f2f4f4;
   padding-bottom: 15px;
   padding-top: 40px; }

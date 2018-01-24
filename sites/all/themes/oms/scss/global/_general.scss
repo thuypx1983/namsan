@@ -29,18 +29,26 @@ img{
 }
 body.not-front{
   background-color: $text_white;
-  a{
-    color: $bg_2;
-  }
-  #main{
-    margin-top: 50px;
-  }
+
 }
 .page-title{
-  margin-bottom: 10px;
+  background-color: $bg_7;
+  margin-bottom: 30px;
   h1.title,h2.title{
-    font-size: 20px;
-    margin-bottom: 10px;
+    font-size: 30px;
+    margin-bottom: 25px;
+    padding-bottom: 10pt;
+    margin-top: 25px;
+    position: relative;
+    &:after{
+      content:"";
+      position: absolute;
+      width: 30px;
+      height: 2px;
+      background-color: $text_black;
+      bottom: 0px;
+      left: 0px;
+    }
   }
 }
 
