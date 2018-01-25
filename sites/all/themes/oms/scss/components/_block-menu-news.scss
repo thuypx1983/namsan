@@ -10,8 +10,9 @@
       a{
         font-size: 15px;
         color: $text_black_light;
+        font-weight: bold;
         &.active{
-          color: $bg_4;
+          color: $text_black1;
         }
         &:before{
           content: "\2022\2002";

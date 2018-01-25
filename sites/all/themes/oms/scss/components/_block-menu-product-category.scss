@@ -17,17 +17,17 @@
       a{
         text-decoration: none;
         font-size: 15px;
-        color: $text_black1;
-        text-transform: uppercase;
+        color: $text_black_light;
+        margin-left: 10px;
         &:hover{
           color: $text_red;
         }
         &.active{
-          color: $bg_4;
+          color: $text_black1;
         }
-        /*&:before{
+        &:before{
           content: '\2022\2002';
-        }*/
+        }
       }
       .glyphicon{
         float: right;
@@ -43,7 +43,7 @@
   .content{
     &>ul.menu{
       &>li{
-        border-bottom: 1px solid $text_black1;
+        border-bottom: 1px solid $text_black_light;
         &>a{
           font-weight: bold;
         }
