@@ -84,7 +84,11 @@
       .form-text{
         background-color: $text_white;
         color: $text_black;
+        height: 30px;
       }
+    }
+    .form-actions{
+      background-color: $text_gray_light;
     }
   }
 }

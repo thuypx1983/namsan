@@ -734,6 +734,10 @@ body.not-front {
   #block-search-form .form-type-textfield .form-text {
     background-color: #fff;
     color: #000;
+    height: 30px;
+  }
+  #block-search-form .form-actions {
+    background-color: #9a9a9a;
   }
 }
 .front #home-banner {
