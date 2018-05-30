@@ -1,18 +1,3 @@
-
-    <style>
-        .image-overlay{
-            display: block;
-            position: fixed;
-            height: 100vh;
-            width: 100vw;
-            z-index: 99999;
-            top: 0px;
-            left: 0px;
-            cursor: pointer;
-            background: #b68b3c url('https://images.pexels.com/photos/255379/pexels-photo-255379.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260') no-repeat top left
-        }
-    </style>
-    <div class="image-overlay" title="click vao day de xem tiep"></div>
 <header >
     <div class="hotline-mobile hidden-md hidden-lg">
         <span><?php echo t('CÔNG TY CỔ PHẦN HÓA SINH VIỆT NAM')?></span>
