@@ -557,6 +557,9 @@ body.not-front {
       border-left: 1px solid #fff;
       padding: 5px; }
 
+@media only screen and (min-width: 992px) {
+  .block-search .search-form {
+    margin-top: 15px; } }
 @media only screen and (max-width: 991px) {
   #block-search-form {
     padding-top: 80px;

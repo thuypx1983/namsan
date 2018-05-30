@@ -42,6 +42,11 @@
 
 }
 
+@include bp(min-width,$bp-tablet+1){
+  .block-search .search-form{
+    margin-top: 15px;
+  }
+}
 @include bp(max-width,$bp-tablet){
   #block-search-form{
     padding-top: 80px;
